@@ -3,6 +3,7 @@ package com.lawlett.musicplayer;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String BASE_URL_FOR_SONG = "http://45.88.104.12/hc/preview/temp_067TG/";
+    private static final String BASE_URL_FOR_SONG = "http://45.80.69.117/hc/preview/temp_067TG/";
     private static final String MP3 = ".mp3";
     RecyclerView recyclerView;
     MusicAdapter musicAdapter;
@@ -53,16 +54,6 @@ public class MainActivity extends AppCompatActivity {
         musicAdapter.setListener(new OnSongClickListener() {
             @Override
             public void onSongClick(int position) {
-                if (mp != null) {
-                    try {
-                        mp.stop();
-                        mp.setDataSource("");
-                        mp.release();
-                        mp = null;
-                    } catch (Exception e) {
-
-                    }
-                }
                 char[] chars = songsURL.get(position).toString().toCharArray();
                 for (int i = 0; i < chars.length; i++) {
                     if (chars[i] != '#') {
@@ -78,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 final String url = BASE_URL_FOR_SONG + mp3Url + MP3;
+                Log.d("song",url);
                 mp = new MediaPlayer();
                 try {
                     mp.setDataSource(url);
