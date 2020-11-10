@@ -116,7 +116,7 @@ public class AdapterMusic extends BaseAdapter {
         if (convertView == null) {
             mViewHolder = new ViewHolder();
             convertView = inflate.inflate(R.layout.inflate_allsongsitem, null);
-            mViewHolder.mediaArt = (ImageView) convertView.findViewById(R.id.img_mediaArt);
+//            mViewHolder.mediaArt = (ImageView) convertView.findViewById(R.id.img_mediaArt);
             mViewHolder.playState = (ImageView) convertView.findViewById(R.id.img_playState);
             mViewHolder.mediaTitle = (TextView) convertView.findViewById(R.id.text_mediaTitle);
             mViewHolder.MediaDesc = (TextView) convertView.findViewById(R.id.text_mediaDesc);
@@ -130,7 +130,7 @@ public class AdapterMusic extends BaseAdapter {
         mViewHolder.MediaDesc.setText(media.getMediaArtist());
         mViewHolder.playState.setImageDrawable(getDrawableByState(mContext, media.getPlayState()));
         String mediaArt = media.getMediaArt();
-        imageLoader.displayImage(mediaArt, mViewHolder.mediaArt, options, animateFirstListener);
+//        imageLoader.displayImage(mediaArt, mViewHolder.mediaArt, options, animateFirstListener);
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override

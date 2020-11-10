@@ -1,8 +1,4 @@
-/*
- * This is the source code of DMAudioStreaming for Android v. 1.0.0.
- * You should have received a copy of the license in this archive (see LICENSE).
- * Copyright @Dibakar_Mistry(dibakar.ece@gmail.com), 2017.
- */
+
 package com.lawlett.musicplayer.network;
 
 
@@ -50,8 +46,8 @@ public class MusicBrowser {
     public static ArrayList<MediaMetaData> songModels = new ArrayList<>();
 
     public static final String urlHome = "http://hotcharts.ru/";
-
-    private static final String BASE_URL_FOR_SONG = "http://45.88.104.12//hc/preview/temp_067TG/";
+//http://45.80.69.117/hc/preview/temp_067TG/2019/Pascal%20Letoublon%20-%20Friendships.mp3
+    private static final String BASE_URL_FOR_SONG = "http://45.80.69.117/hc/preview/temp_067TG/";
     private static final String MP3 = ".mp3";
 
     public static void loadMusic(final Context context, final MusicLoaderListener loaderListener) {
@@ -64,7 +60,7 @@ public class MusicBrowser {
             protected Void doInBackground(Void... voids) {
                 //resp = getDataResponse();
                 try {
-                    Document doc = Jsoup.connect(urlHome)
+                    Document doc = Jsoup.connect("http://hotcharts.ru/europaplus/archive/2020.htm")
                             .referrer("http://hotcharts.ru/")
                             .get();
                     final Elements els = doc.select("td[class=song]");

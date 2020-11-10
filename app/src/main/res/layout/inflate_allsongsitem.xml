@@ -13,16 +13,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-        <com.lawlett.musicplayer.widgets.CircleImageView
-            android:id="@+id/img_mediaArt"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+        <ImageView
+            android:id="@+id/img_playState"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
             android:layout_centerInParent="true"
             android:layout_marginLeft="8dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bg_default_album_art"
-            app:border_width="0dp"
-            app:shadow="false" />
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_play" />
+
+<!--        <com.lawlett.musicplayer.widgets.CircleImageView-->
+<!--            android:id="@+id/img_mediaArt"-->
+<!--            android:layout_width="48dp"-->
+<!--            android:layout_height="48dp"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:layout_marginLeft="8dp"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            android:src="@drawable/bg_default_album_art"-->
+<!--            app:border_width="0dp"-->
+<!--            app:shadow="false" />-->
 
         <ProgressBar
             android:id="@+id/pg"
@@ -74,15 +83,7 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/img_playState"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_play" />
+
     </RelativeLayout>
 
 
